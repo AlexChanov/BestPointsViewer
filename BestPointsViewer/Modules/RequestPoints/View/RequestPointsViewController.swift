@@ -13,7 +13,7 @@ final class RequestPointsViewController: UIViewController {
 
     private let infoLabel: UILabel = {
         let label = UILabel()
-        label.text = "Ваш информационный текст"
+        label.text = "Информационный текст"
         label.numberOfLines = 0
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -34,6 +34,13 @@ final class RequestPointsViewController: UIViewController {
         button.setTitle("Поехали", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
+    }()
+
+    private let activityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
     }()
 
     // MARK: Private properties
@@ -63,6 +70,7 @@ final class RequestPointsViewController: UIViewController {
         view.addSubview(infoLabel)
         view.addSubview(textField)
         view.addSubview(button)
+        view.addSubview(activityIndicator)
 
         button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
 
@@ -76,11 +84,17 @@ final class RequestPointsViewController: UIViewController {
             textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
 
             button.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 20),
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
 
     @objc private func buttonClicked() {
+        activityIndicator.startAnimating()
+        textField.isEnabled = false
+        button.isEnabled = false
         presenter.fetchPoints(for: textField.text)
     }
 }
@@ -88,12 +102,24 @@ final class RequestPointsViewController: UIViewController {
 // MARK: RequestPointsViewProtocol
 
 extension RequestPointsViewController: RequestPointsViewProtocol {
-    
+
     func displayIncorrectText(_ text: String) {
+        resetUI()
         infoLabel.text = text
+    }
+
+    func displaySuccess() {
+        resetUI()
     }
 
     func displayError(_ error: Error) {
         infoLabel.text = "An error occurred: \(error.localizedDescription)"
+        resetUI()
+    }
+
+    private func resetUI() {
+        activityIndicator.stopAnimating()
+        textField.isEnabled = true
+        button.isEnabled = true
     }
 }
