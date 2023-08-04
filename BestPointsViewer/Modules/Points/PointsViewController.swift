@@ -38,6 +38,7 @@ final class PointsViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         chartView.points = points
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save Image", style: .plain, target: self, action: #selector(saveChartImage))
         setupUI()
     }
 
@@ -61,6 +62,28 @@ final class PointsViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+
+    @objc func saveChartImage() {
+        chartView.saveToFile { [weak self] url, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self?.showAlert(with: error)
+                } else if let url = url {
+                    let imageVC = ImageViewController()
+                    imageVC.imageURL = url
+                    self?.navigationController?.pushViewController(imageVC, animated: true)
+                }
+            }
+        }
+    }
+
+    func showAlert(with error: Error) {
+        let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+
 }
 
 // MARK: UITableViewDataSource

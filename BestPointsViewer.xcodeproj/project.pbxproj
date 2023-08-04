@@ -33,6 +33,8 @@
 		384C936E2A7ACF5C00F0DF3F /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C936D2A7ACF5C00F0DF3F /* PointsViewController.swift */; };
 		384C93702A7ACF7D00F0DF3F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C936F2A7ACF7D00F0DF3F /* ChartView.swift */; };
 		384C93722A7AF1F600F0DF3F /* RequestPointsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93712A7AF1F600F0DF3F /* RequestPointsRouter.swift */; };
+		384E8AE52A7D7A8C009AFD57 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AE42A7D7A8C009AFD57 /* CanvasView.swift */; };
+		384E8AE82A7D7D6F009AFD57 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AE72A7D7D6F009AFD57 /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		384C936D2A7ACF5C00F0DF3F /* PointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
 		384C936F2A7ACF7D00F0DF3F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		384C93712A7AF1F600F0DF3F /* RequestPointsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPointsRouter.swift; sourceTree = "<group>"; };
+		384E8AE42A7D7A8C009AFD57 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		384E8AE72A7D7D6F009AFD57 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,7 @@
 		384C93522A7AC10500F0DF3F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				384E8AE62A7D7D5D009AFD57 /* SavedImage */,
 				384C93542A7AC52500F0DF3F /* RequestPoints */,
 				384C936C2A7ACF4B00F0DF3F /* Points */,
 			);
@@ -261,6 +266,7 @@
 			children = (
 				384C936D2A7ACF5C00F0DF3F /* PointsViewController.swift */,
 				384C936F2A7ACF7D00F0DF3F /* ChartView.swift */,
+				384E8AE42A7D7A8C009AFD57 /* CanvasView.swift */,
 			);
 			path = Points;
 			sourceTree = "<group>";
@@ -272,6 +278,14 @@
 				383B29892A7B9CF50094650C /* RequestPointsRouterProtocol.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		384E8AE62A7D7D5D009AFD57 /* SavedImage */ = {
+			isa = PBXGroup;
+			children = (
+				384E8AE72A7D7D6F009AFD57 /* ImageViewController.swift */,
+			);
+			path = SavedImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +427,7 @@
 				384C93592A7AC67700F0DF3F /* RequestPointsViewProtocol.swift in Sources */,
 				384C93702A7ACF7D00F0DF3F /* ChartView.swift in Sources */,
 				384C93572A7AC57000F0DF3F /* RequestPointsViewController.swift in Sources */,
+				384E8AE52A7D7A8C009AFD57 /* CanvasView.swift in Sources */,
 				384C936E2A7ACF5C00F0DF3F /* PointsViewController.swift in Sources */,
 				384C93162A7AB96300F0DF3F /* AppDelegate.swift in Sources */,
 				384C93632A7AC79600F0DF3F /* RequestPointsInteractor.swift in Sources */,
@@ -424,6 +439,7 @@
 				384C934E2A7AC06200F0DF3F /* Point.swift in Sources */,
 				384C93492A7ABF7A00F0DF3F /* PointsEndpoint.swift in Sources */,
 				384C93182A7AB96300F0DF3F /* SceneDelegate.swift in Sources */,
+				384E8AE82A7D7D6F009AFD57 /* ImageViewController.swift in Sources */,
 				384C93722A7AF1F600F0DF3F /* RequestPointsRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
