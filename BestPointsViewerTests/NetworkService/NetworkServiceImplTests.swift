@@ -10,34 +10,38 @@ import XCTest
 
 final class NetworkServiceImplTests: XCTestCase {
 
-    private let json = """
+    // MARK: - Properties
+    
+    private let mockJSON = """
     {
-      "points": [
-        {
-          "x": 1,
-          "y": 2
-        },
-        {
-          "x": 3,
-          "y": 4
-        }
-      ]
+        "points": [
+            {"x": 1, "y": 2},
+            {"x": 3, "y": 4}
+        ]
     }
     """
 
-    var networkService: NetworkServiceImpl!
-    var mockSession: MockURLSession!
+    private var networkService: NetworkServiceImpl!
+    private var mockSession: MockURLSession!
 
-     override func setUp() {
-         super.setUp()
-         mockSession = MockURLSession()
-         networkService = NetworkServiceImpl(session: mockSession)
-     }
+    // MARK: - Lifecycle Methods
+
+    override func setUp() {
+        super.setUp()
+        setupNetworkService()
+    }
+
+    // MARK: - Tests
 
     func testFetchPointsSuccess() {
         let endpoint = PointsEndpoint(count: "2")
-        mockSession.nextData = json.data(using: .utf8)
-        mockSession.nextResponse = HTTPURLResponse(url: URL(string: "https://example.com/points")!, statusCode: 200, httpVersion: "HTTP/1.1", headerFields: nil)
+        mockSession.nextData = mockJSON.data(using: .utf8)
+        mockSession.nextResponse = HTTPURLResponse(
+            url: URL(string: "https://example.com/points")!,
+            statusCode: 200,
+            httpVersion: "HTTP/1.1",
+            headerFields: nil
+        )
 
         let expect = expectation(description: "Fetch points success")
 
@@ -55,32 +59,36 @@ final class NetworkServiceImplTests: XCTestCase {
             expect.fulfill()
         }
 
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 1)
     }
 
     func testFetchPoints_APIReturns404Error_ShouldReturnNetworkErrorStatusCode404() {
-        let mockSession = MockURLSession()
-        let networkService = NetworkServiceImpl(session: mockSession)
         let endpoint = PointsEndpoint(count: "2")
 
-        let response = HTTPURLResponse(url: URL(string: endpoint.baseUrl)!, statusCode: 404, httpVersion: nil, headerFields: nil)
+        let response = HTTPURLResponse(
+            url: URL(string: endpoint.baseUrl)!,
+            statusCode: 404,
+            httpVersion: nil,
+            headerFields: nil
+        )
         mockSession.nextResponse = response
 
         let expect = expectation(description: "API response expectation")
 
         networkService.fetchPoints(endpoint: endpoint) { result in
-            switch result {
-            case .success:
+            if case .success = result {
                 XCTFail("Expected failure, but got success")
-            case .failure(let error):
+            }
+
+            if case .failure(let error) = result {
                 guard let networkError = error as? NetworkServiceImpl.NetworkError else {
                     XCTFail("Expected NetworkError, but got \(error)")
                     return
                 }
-                switch networkError {
-                case .statusCode(let statusCode):
+
+                if case .statusCode(let statusCode) = networkError {
                     XCTAssertEqual(statusCode, 404)
-                default:
+                } else {
                     XCTFail("Expected NetworkError.statusCode, but got \(networkError)")
                 }
             }
@@ -89,5 +97,12 @@ final class NetworkServiceImplTests: XCTestCase {
         }
 
         waitForExpectations(timeout: 1.0)
+    }
+
+    // MARK: - Private Methods
+
+    private func setupNetworkService() {
+        mockSession = MockURLSession()
+        networkService = NetworkServiceImpl(session: mockSession)
     }
 }
