@@ -7,15 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		383B298A2A7B9CF50094650C /* RequestPointsRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383B29892A7B9CF50094650C /* RequestPointsRouterProtocol.swift */; };
 		384C93162A7AB96300F0DF3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93152A7AB96300F0DF3F /* AppDelegate.swift */; };
 		384C93182A7AB96300F0DF3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93172A7AB96300F0DF3F /* SceneDelegate.swift */; };
-		384C931A2A7AB96300F0DF3F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93192A7AB96300F0DF3F /* ViewController.swift */; };
 		384C931D2A7AB96300F0DF3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384C931B2A7AB96300F0DF3F /* Main.storyboard */; };
 		384C931F2A7AB96500F0DF3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 384C931E2A7AB96500F0DF3F /* Assets.xcassets */; };
 		384C93222A7AB96500F0DF3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 384C93202A7AB96500F0DF3F /* LaunchScreen.storyboard */; };
 		384C932D2A7AB96500F0DF3F /* BestPointsViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C932C2A7AB96500F0DF3F /* BestPointsViewerTests.swift */; };
 		384C93372A7AB96500F0DF3F /* BestPointsViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93362A7AB96500F0DF3F /* BestPointsViewerUITests.swift */; };
 		384C93392A7AB96500F0DF3F /* BestPointsViewerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93382A7AB96500F0DF3F /* BestPointsViewerUITestsLaunchTests.swift */; };
+		384C93472A7ABF4C00F0DF3F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93462A7ABF4C00F0DF3F /* Endpoint.swift */; };
+		384C93492A7ABF7A00F0DF3F /* PointsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93482A7ABF7A00F0DF3F /* PointsEndpoint.swift */; };
+		384C934C2A7AC04200F0DF3F /* PointsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C934B2A7AC04200F0DF3F /* PointsResponse.swift */; };
+		384C934E2A7AC06200F0DF3F /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C934D2A7AC06200F0DF3F /* Point.swift */; };
+		384C93512A7AC0A700F0DF3F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93502A7AC0A700F0DF3F /* NetworkService.swift */; };
+		384C93572A7AC57000F0DF3F /* RequestPointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93562A7AC57000F0DF3F /* RequestPointsViewController.swift */; };
+		384C93592A7AC67700F0DF3F /* RequestPointsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93582A7AC67700F0DF3F /* RequestPointsViewProtocol.swift */; };
+		384C935B2A7AC6E500F0DF3F /* RequestPointsInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C935A2A7AC6E500F0DF3F /* RequestPointsInteractorProtocol.swift */; };
+		384C935D2A7AC6FB00F0DF3F /* RequestPointsInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C935C2A7AC6FB00F0DF3F /* RequestPointsInteractorOutputProtocol.swift */; };
+		384C935F2A7AC73500F0DF3F /* RequestPointsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C935E2A7AC73500F0DF3F /* RequestPointsPresenterProtocol.swift */; };
+		384C93612A7AC74C00F0DF3F /* RequestPointsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93602A7AC74C00F0DF3F /* RequestPointsPresenter.swift */; };
+		384C93632A7AC79600F0DF3F /* RequestPointsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93622A7AC79600F0DF3F /* RequestPointsInteractor.swift */; };
+		384C93652A7AC82C00F0DF3F /* RequestPointsModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93642A7AC82C00F0DF3F /* RequestPointsModuleAssembly.swift */; };
+		384C936B2A7ACDBD00F0DF3F /* NetworkServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C936A2A7ACDBD00F0DF3F /* NetworkServiceImpl.swift */; };
+		384C936E2A7ACF5C00F0DF3F /* PointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C936D2A7ACF5C00F0DF3F /* PointsViewController.swift */; };
+		384C93702A7ACF7D00F0DF3F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C936F2A7ACF7D00F0DF3F /* ChartView.swift */; };
+		384C93722A7AF1F600F0DF3F /* RequestPointsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93712A7AF1F600F0DF3F /* RequestPointsRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		383B29892A7B9CF50094650C /* RequestPointsRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPointsRouterProtocol.swift; sourceTree = "<group>"; };
 		384C93122A7AB96300F0DF3F /* BestPointsViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestPointsViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		384C93152A7AB96300F0DF3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		384C93172A7AB96300F0DF3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		384C93192A7AB96300F0DF3F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		384C931C2A7AB96300F0DF3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		384C931E2A7AB96500F0DF3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		384C93212A7AB96500F0DF3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +66,23 @@
 		384C93322A7AB96500F0DF3F /* BestPointsViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BestPointsViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		384C93362A7AB96500F0DF3F /* BestPointsViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPointsViewerUITests.swift; sourceTree = "<group>"; };
 		384C93382A7AB96500F0DF3F /* BestPointsViewerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestPointsViewerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		384C93462A7ABF4C00F0DF3F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		384C93482A7ABF7A00F0DF3F /* PointsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsEndpoint.swift; sourceTree = "<group>"; };
+		384C934B2A7AC04200F0DF3F /* PointsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsResponse.swift; sourceTree = "<group>"; };
+		384C934D2A7AC06200F0DF3F /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		384C93502A7AC0A700F0DF3F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		384C93562A7AC57000F0DF3F /* RequestPointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPointsViewController.swift; sourceTree = "<group>"; };
+		384C93582A7AC67700F0DF3F /* RequestPointsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPointsViewProtocol.swift; sourceTree = "<group>"; };
+		384C935A2A7AC6E500F0DF3F /* RequestPointsInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPointsInteractorProtocol.swift; sourceTree = "<group>"; };
+		384C935C2A7AC6FB00F0DF3F /* RequestPointsInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPointsInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		384C935E2A7AC73500F0DF3F /* RequestPointsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPointsPresenterProtocol.swift; sourceTree = "<group>"; };
+		384C93602A7AC74C00F0DF3F /* RequestPointsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPointsPresenter.swift; sourceTree = "<group>"; };
+		384C93622A7AC79600F0DF3F /* RequestPointsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPointsInteractor.swift; sourceTree = "<group>"; };
+		384C93642A7AC82C00F0DF3F /* RequestPointsModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPointsModuleAssembly.swift; sourceTree = "<group>"; };
+		384C936A2A7ACDBD00F0DF3F /* NetworkServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImpl.swift; sourceTree = "<group>"; };
+		384C936D2A7ACF5C00F0DF3F /* PointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsViewController.swift; sourceTree = "<group>"; };
+		384C936F2A7ACF7D00F0DF3F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		384C93712A7AF1F600F0DF3F /* RequestPointsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPointsRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +135,10 @@
 			children = (
 				384C93152A7AB96300F0DF3F /* AppDelegate.swift */,
 				384C93172A7AB96300F0DF3F /* SceneDelegate.swift */,
-				384C93192A7AB96300F0DF3F /* ViewController.swift */,
-				384C931B2A7AB96300F0DF3F /* Main.storyboard */,
-				384C931E2A7AB96500F0DF3F /* Assets.xcassets */,
-				384C93202A7AB96500F0DF3F /* LaunchScreen.storyboard */,
-				384C93232A7AB96500F0DF3F /* Info.plist */,
+				384C934A2A7AC03500F0DF3F /* Models */,
+				384C934F2A7AC08900F0DF3F /* Services */,
+				384C93522A7AC10500F0DF3F /* Modules */,
+				384C93532A7AC10D00F0DF3F /* SupportFiles */,
 			);
 			path = BestPointsViewer;
 			sourceTree = "<group>";
@@ -125,6 +158,120 @@
 				384C93382A7AB96500F0DF3F /* BestPointsViewerUITestsLaunchTests.swift */,
 			);
 			path = BestPointsViewerUITests;
+			sourceTree = "<group>";
+		};
+		384C93452A7ABED300F0DF3F /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				384C93462A7ABF4C00F0DF3F /* Endpoint.swift */,
+				384C93482A7ABF7A00F0DF3F /* PointsEndpoint.swift */,
+				384C93502A7AC0A700F0DF3F /* NetworkService.swift */,
+				384C936A2A7ACDBD00F0DF3F /* NetworkServiceImpl.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		384C934A2A7AC03500F0DF3F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				384C934B2A7AC04200F0DF3F /* PointsResponse.swift */,
+				384C934D2A7AC06200F0DF3F /* Point.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		384C934F2A7AC08900F0DF3F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				384C93452A7ABED300F0DF3F /* NetworkService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		384C93522A7AC10500F0DF3F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				384C93542A7AC52500F0DF3F /* RequestPoints */,
+				384C936C2A7ACF4B00F0DF3F /* Points */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		384C93532A7AC10D00F0DF3F /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				384C931B2A7AB96300F0DF3F /* Main.storyboard */,
+				384C93202A7AB96500F0DF3F /* LaunchScreen.storyboard */,
+				384C931E2A7AB96500F0DF3F /* Assets.xcassets */,
+				384C93232A7AB96500F0DF3F /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		384C93542A7AC52500F0DF3F /* RequestPoints */ = {
+			isa = PBXGroup;
+			children = (
+				384C93672A7ACA1E00F0DF3F /* Interactor */,
+				384C93662A7ACA1300F0DF3F /* View */,
+				384C93682A7ACA4B00F0DF3F /* Presenter */,
+				384C93692A7ACA6300F0DF3F /* Assembly */,
+				384C93732A7AF1FB00F0DF3F /* Router */,
+			);
+			path = RequestPoints;
+			sourceTree = "<group>";
+		};
+		384C93662A7ACA1300F0DF3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				384C93562A7AC57000F0DF3F /* RequestPointsViewController.swift */,
+				384C93582A7AC67700F0DF3F /* RequestPointsViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		384C93672A7ACA1E00F0DF3F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				384C93622A7AC79600F0DF3F /* RequestPointsInteractor.swift */,
+				384C935A2A7AC6E500F0DF3F /* RequestPointsInteractorProtocol.swift */,
+				384C935C2A7AC6FB00F0DF3F /* RequestPointsInteractorOutputProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		384C93682A7ACA4B00F0DF3F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				384C93602A7AC74C00F0DF3F /* RequestPointsPresenter.swift */,
+				384C935E2A7AC73500F0DF3F /* RequestPointsPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		384C93692A7ACA6300F0DF3F /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				384C93642A7AC82C00F0DF3F /* RequestPointsModuleAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		384C936C2A7ACF4B00F0DF3F /* Points */ = {
+			isa = PBXGroup;
+			children = (
+				384C936D2A7ACF5C00F0DF3F /* PointsViewController.swift */,
+				384C936F2A7ACF7D00F0DF3F /* ChartView.swift */,
+			);
+			path = Points;
+			sourceTree = "<group>";
+		};
+		384C93732A7AF1FB00F0DF3F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				384C93712A7AF1F600F0DF3F /* RequestPointsRouter.swift */,
+				383B29892A7B9CF50094650C /* RequestPointsRouterProtocol.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +405,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				384C931A2A7AB96300F0DF3F /* ViewController.swift in Sources */,
+				384C936B2A7ACDBD00F0DF3F /* NetworkServiceImpl.swift in Sources */,
+				384C93612A7AC74C00F0DF3F /* RequestPointsPresenter.swift in Sources */,
+				384C934C2A7AC04200F0DF3F /* PointsResponse.swift in Sources */,
+				383B298A2A7B9CF50094650C /* RequestPointsRouterProtocol.swift in Sources */,
+				384C93512A7AC0A700F0DF3F /* NetworkService.swift in Sources */,
+				384C93592A7AC67700F0DF3F /* RequestPointsViewProtocol.swift in Sources */,
+				384C93702A7ACF7D00F0DF3F /* ChartView.swift in Sources */,
+				384C93572A7AC57000F0DF3F /* RequestPointsViewController.swift in Sources */,
+				384C936E2A7ACF5C00F0DF3F /* PointsViewController.swift in Sources */,
 				384C93162A7AB96300F0DF3F /* AppDelegate.swift in Sources */,
+				384C93632A7AC79600F0DF3F /* RequestPointsInteractor.swift in Sources */,
+				384C93652A7AC82C00F0DF3F /* RequestPointsModuleAssembly.swift in Sources */,
+				384C935D2A7AC6FB00F0DF3F /* RequestPointsInteractorOutputProtocol.swift in Sources */,
+				384C93472A7ABF4C00F0DF3F /* Endpoint.swift in Sources */,
+				384C935F2A7AC73500F0DF3F /* RequestPointsPresenterProtocol.swift in Sources */,
+				384C935B2A7AC6E500F0DF3F /* RequestPointsInteractorProtocol.swift in Sources */,
+				384C934E2A7AC06200F0DF3F /* Point.swift in Sources */,
+				384C93492A7ABF7A00F0DF3F /* PointsEndpoint.swift in Sources */,
 				384C93182A7AB96300F0DF3F /* SceneDelegate.swift in Sources */,
+				384C93722A7AF1F600F0DF3F /* RequestPointsRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +602,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BestPointsViewer/Info.plist;
+				INFOPLIST_FILE = BestPointsViewer/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -465,7 +629,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BestPointsViewer/Info.plist;
+				INFOPLIST_FILE = BestPointsViewer/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
