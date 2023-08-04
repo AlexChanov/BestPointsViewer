@@ -85,14 +85,12 @@ final class RequestPointsViewController: UIViewController {
     }
 }
 
+// MARK: RequestPointsViewProtocol
+
 extension RequestPointsViewController: RequestPointsViewProtocol {
+    
     func displayIncorrectText(_ text: String) {
         infoLabel.text = text
-    }
-
-    func displayPoints(_ points: [Point]) {
-        let pointsViewController = PointsViewController(points: points)
-        navigationController?.pushViewController(pointsViewController, animated: true)
     }
 
     func displayError(_ error: Error) {

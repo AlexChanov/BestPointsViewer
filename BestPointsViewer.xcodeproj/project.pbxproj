@@ -35,6 +35,18 @@
 		384C93722A7AF1F600F0DF3F /* RequestPointsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C93712A7AF1F600F0DF3F /* RequestPointsRouter.swift */; };
 		384E8AE52A7D7A8C009AFD57 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AE42A7D7A8C009AFD57 /* CanvasView.swift */; };
 		384E8AE82A7D7D6F009AFD57 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AE72A7D7D6F009AFD57 /* ImageViewController.swift */; };
+		384E8AEB2A7D9F94009AFD57 /* PointsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AEA2A7D9F94009AFD57 /* PointsPresenter.swift */; };
+		384E8AED2A7DA0DA009AFD57 /* PointsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AEC2A7DA0DA009AFD57 /* PointsRouter.swift */; };
+		384E8AEF2A7DA115009AFD57 /* PointsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AEE2A7DA115009AFD57 /* PointsInteractor.swift */; };
+		384E8AF12A7DA29F009AFD57 /* PointsModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AF02A7DA29F009AFD57 /* PointsModuleAssembly.swift */; };
+		384E8AF32A7DA94B009AFD57 /* PointsViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AF22A7DA94B009AFD57 /* PointsViewProtocol.swift */; };
+		384E8AF72A7DA975009AFD57 /* PointsRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AF62A7DA975009AFD57 /* PointsRouterProtocol.swift */; };
+		384E8AFA2A7DA9A6009AFD57 /* PointsInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AF92A7DA9A6009AFD57 /* PointsInteractorProtocol.swift */; };
+		384E8AFC2A7DA9B8009AFD57 /* PointsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AFB2A7DA9B8009AFD57 /* PointsPresenterProtocol.swift */; };
+		384E8AFE2A7DA9CA009AFD57 /* PointsInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8AFD2A7DA9CA009AFD57 /* PointsInteractorOutputProtocol.swift */; };
+		384E8B012A7DAAC8009AFD57 /* NetworkServiceImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8B002A7DAAC8009AFD57 /* NetworkServiceImplTests.swift */; };
+		384E8B042A7DAF1E009AFD57 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8B032A7DAF1E009AFD57 /* MockURLSession.swift */; };
+		384E8B062A7DAF36009AFD57 /* MockURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384E8B052A7DAF36009AFD57 /* MockURLSessionDataTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +99,18 @@
 		384C93712A7AF1F600F0DF3F /* RequestPointsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestPointsRouter.swift; sourceTree = "<group>"; };
 		384E8AE42A7D7A8C009AFD57 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		384E8AE72A7D7D6F009AFD57 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		384E8AEA2A7D9F94009AFD57 /* PointsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsPresenter.swift; sourceTree = "<group>"; };
+		384E8AEC2A7DA0DA009AFD57 /* PointsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRouter.swift; sourceTree = "<group>"; };
+		384E8AEE2A7DA115009AFD57 /* PointsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsInteractor.swift; sourceTree = "<group>"; };
+		384E8AF02A7DA29F009AFD57 /* PointsModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsModuleAssembly.swift; sourceTree = "<group>"; };
+		384E8AF22A7DA94B009AFD57 /* PointsViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsViewProtocol.swift; sourceTree = "<group>"; };
+		384E8AF62A7DA975009AFD57 /* PointsRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsRouterProtocol.swift; sourceTree = "<group>"; };
+		384E8AF92A7DA9A6009AFD57 /* PointsInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsInteractorProtocol.swift; sourceTree = "<group>"; };
+		384E8AFB2A7DA9B8009AFD57 /* PointsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsPresenterProtocol.swift; sourceTree = "<group>"; };
+		384E8AFD2A7DA9CA009AFD57 /* PointsInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		384E8B002A7DAAC8009AFD57 /* NetworkServiceImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceImplTests.swift; sourceTree = "<group>"; };
+		384E8B032A7DAF1E009AFD57 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
+		384E8B052A7DAF36009AFD57 /* MockURLSessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionDataTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				384C932C2A7AB96500F0DF3F /* BestPointsViewerTests.swift */,
+				384E8B022A7DAF0E009AFD57 /* NetworkService */,
 			);
 			path = BestPointsViewerTests;
 			sourceTree = "<group>";
@@ -264,9 +289,11 @@
 		384C936C2A7ACF4B00F0DF3F /* Points */ = {
 			isa = PBXGroup;
 			children = (
-				384C936D2A7ACF5C00F0DF3F /* PointsViewController.swift */,
-				384C936F2A7ACF7D00F0DF3F /* ChartView.swift */,
-				384E8AE42A7D7A8C009AFD57 /* CanvasView.swift */,
+				384E8AE92A7D9F80009AFD57 /* View */,
+				384E8AFF2A7DA9EA009AFD57 /* Presenter */,
+				384E8AF82A7DA993009AFD57 /* Interactor */,
+				384E8AF52A7DA963009AFD57 /* Router */,
+				384E8AF42A7DA95D009AFD57 /* Assembly */,
 			);
 			path = Points;
 			sourceTree = "<group>";
@@ -286,6 +313,63 @@
 				384E8AE72A7D7D6F009AFD57 /* ImageViewController.swift */,
 			);
 			path = SavedImage;
+			sourceTree = "<group>";
+		};
+		384E8AE92A7D9F80009AFD57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				384C936D2A7ACF5C00F0DF3F /* PointsViewController.swift */,
+				384E8AF22A7DA94B009AFD57 /* PointsViewProtocol.swift */,
+				384C936F2A7ACF7D00F0DF3F /* ChartView.swift */,
+				384E8AE42A7D7A8C009AFD57 /* CanvasView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		384E8AF42A7DA95D009AFD57 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				384E8AF02A7DA29F009AFD57 /* PointsModuleAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		384E8AF52A7DA963009AFD57 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				384E8AEC2A7DA0DA009AFD57 /* PointsRouter.swift */,
+				384E8AF62A7DA975009AFD57 /* PointsRouterProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		384E8AF82A7DA993009AFD57 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				384E8AEE2A7DA115009AFD57 /* PointsInteractor.swift */,
+				384E8AF92A7DA9A6009AFD57 /* PointsInteractorProtocol.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		384E8AFF2A7DA9EA009AFD57 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				384E8AEA2A7D9F94009AFD57 /* PointsPresenter.swift */,
+				384E8AFD2A7DA9CA009AFD57 /* PointsInteractorOutputProtocol.swift */,
+				384E8AFB2A7DA9B8009AFD57 /* PointsPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		384E8B022A7DAF0E009AFD57 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				384E8B002A7DAAC8009AFD57 /* NetworkServiceImplTests.swift */,
+				384E8B052A7DAF36009AFD57 /* MockURLSessionDataTask.swift */,
+				384E8B032A7DAF1E009AFD57 /* MockURLSession.swift */,
+			);
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,18 +509,27 @@
 				383B298A2A7B9CF50094650C /* RequestPointsRouterProtocol.swift in Sources */,
 				384C93512A7AC0A700F0DF3F /* NetworkService.swift in Sources */,
 				384C93592A7AC67700F0DF3F /* RequestPointsViewProtocol.swift in Sources */,
+				384E8AF12A7DA29F009AFD57 /* PointsModuleAssembly.swift in Sources */,
 				384C93702A7ACF7D00F0DF3F /* ChartView.swift in Sources */,
 				384C93572A7AC57000F0DF3F /* RequestPointsViewController.swift in Sources */,
+				384E8AFC2A7DA9B8009AFD57 /* PointsPresenterProtocol.swift in Sources */,
+				384E8AFE2A7DA9CA009AFD57 /* PointsInteractorOutputProtocol.swift in Sources */,
 				384E8AE52A7D7A8C009AFD57 /* CanvasView.swift in Sources */,
 				384C936E2A7ACF5C00F0DF3F /* PointsViewController.swift in Sources */,
 				384C93162A7AB96300F0DF3F /* AppDelegate.swift in Sources */,
+				384E8AED2A7DA0DA009AFD57 /* PointsRouter.swift in Sources */,
 				384C93632A7AC79600F0DF3F /* RequestPointsInteractor.swift in Sources */,
 				384C93652A7AC82C00F0DF3F /* RequestPointsModuleAssembly.swift in Sources */,
 				384C935D2A7AC6FB00F0DF3F /* RequestPointsInteractorOutputProtocol.swift in Sources */,
 				384C93472A7ABF4C00F0DF3F /* Endpoint.swift in Sources */,
+				384E8AF32A7DA94B009AFD57 /* PointsViewProtocol.swift in Sources */,
 				384C935F2A7AC73500F0DF3F /* RequestPointsPresenterProtocol.swift in Sources */,
 				384C935B2A7AC6E500F0DF3F /* RequestPointsInteractorProtocol.swift in Sources */,
+				384E8AEF2A7DA115009AFD57 /* PointsInteractor.swift in Sources */,
+				384E8AF72A7DA975009AFD57 /* PointsRouterProtocol.swift in Sources */,
 				384C934E2A7AC06200F0DF3F /* Point.swift in Sources */,
+				384E8AFA2A7DA9A6009AFD57 /* PointsInteractorProtocol.swift in Sources */,
+				384E8AEB2A7D9F94009AFD57 /* PointsPresenter.swift in Sources */,
 				384C93492A7ABF7A00F0DF3F /* PointsEndpoint.swift in Sources */,
 				384C93182A7AB96300F0DF3F /* SceneDelegate.swift in Sources */,
 				384E8AE82A7D7D6F009AFD57 /* ImageViewController.swift in Sources */,
@@ -448,6 +541,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				384E8B042A7DAF1E009AFD57 /* MockURLSession.swift in Sources */,
+				384E8B062A7DAF36009AFD57 /* MockURLSessionDataTask.swift in Sources */,
+				384E8B012A7DAAC8009AFD57 /* NetworkServiceImplTests.swift in Sources */,
 				384C932D2A7AB96500F0DF3F /* BestPointsViewerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

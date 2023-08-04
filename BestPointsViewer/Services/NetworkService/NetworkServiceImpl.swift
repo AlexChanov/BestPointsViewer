@@ -16,6 +16,12 @@ final class NetworkServiceImpl: NetworkService {
         case dataDecodingFailed
     }
 
+    private let session: URLSession
+
+    init(session: URLSession) {
+        self.session = session
+    }
+
     func fetchPoints(endpoint: Endpoint, completion: @escaping (Result<PointsResponse, Error>) -> Void) {
         guard let url = buildURL(from: endpoint) else {
             completion(.failure(NetworkError.invalidURL))
@@ -24,7 +30,7 @@ final class NetworkServiceImpl: NetworkService {
 
         let request = buildRequest(from: url, endpoint: endpoint)
 
-        let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
+        let dataTask = session.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return

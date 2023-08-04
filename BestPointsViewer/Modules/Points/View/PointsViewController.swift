@@ -7,7 +7,9 @@
 
 import UIKit
 
-final class PointsViewController: UIViewController {
+final class PointsViewController: UIViewController, PointsViewProtocol {
+
+    // MARK: - Views
 
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -23,10 +25,16 @@ final class PointsViewController: UIViewController {
         return view
     }()
 
-    private let points: [Point]
+    // MARK: - Properties
 
-    init(points: [Point]) {
+    private let points: [Point]
+    private let presenter: PointsPresenterProtocol
+
+    // MARK: - Lifecycle
+
+    init(points: [Point], presenter: PointsPresenterProtocol) {
         self.points = points
+        self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -42,11 +50,12 @@ final class PointsViewController: UIViewController {
         setupUI()
     }
 
+    // MARK: - Private fucntions
+
     private func setupUI() {
         view.addSubview(tableView)
         view.addSubview(chartView)
 
-        // конфигурация tableView
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -63,30 +72,12 @@ final class PointsViewController: UIViewController {
         ])
     }
 
-    @objc func saveChartImage() {
-        chartView.saveToFile { [weak self] url, error in
-            DispatchQueue.main.async {
-                if let error = error {
-                    self?.showAlert(with: error)
-                } else if let url = url {
-                    let imageVC = ImageViewController()
-                    imageVC.imageURL = url
-                    self?.navigationController?.pushViewController(imageVC, animated: true)
-                }
-            }
-        }
+    @objc private func saveChartImage() {
+        presenter.saveChartImage(chartView: chartView)
     }
-
-    func showAlert(with error: Error) {
-        let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
-    }
-
 }
 
-// MARK: UITableViewDataSource
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension PointsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

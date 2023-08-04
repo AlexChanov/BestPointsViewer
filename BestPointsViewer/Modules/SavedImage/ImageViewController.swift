@@ -8,7 +8,12 @@
 import UIKit
 
 final class ImageViewController: UIViewController {
+
+    // MARK: - Views
+
     private let imageView = UIImageView()
+
+    // MARK: - Properties
 
     var imageURL: URL? {
         didSet {
@@ -17,6 +22,8 @@ final class ImageViewController: UIViewController {
             imageView.image = UIImage(data: data!)
         }
     }
+
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()

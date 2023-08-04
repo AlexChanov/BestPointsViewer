@@ -9,13 +9,19 @@ import UIKit
 
 final class ChartView: UIScrollView, UIScrollViewDelegate {
 
+    // MARK: - Views
+
     private let canvasView = CanvasView()
+
+    // MARK: - Properties
 
     var points: [Point] = [] {
         didSet {
             canvasView.points = points
         }
     }
+
+    // MARK: - Initialization
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +32,8 @@ final class ChartView: UIScrollView, UIScrollViewDelegate {
         super.init(coder: aDecoder)
         commonInit()
     }
+
+    // MARK: - Private functions
 
     private func commonInit() {
         delegate = self
@@ -38,6 +46,8 @@ final class ChartView: UIScrollView, UIScrollViewDelegate {
         addSubview(canvasView)
         canvasView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
+
+    // MARK: - Public functions
 
     func saveToFile(completion: @escaping (URL?, Error?) -> Void) {
         canvasView.saveToFile(completion: completion)

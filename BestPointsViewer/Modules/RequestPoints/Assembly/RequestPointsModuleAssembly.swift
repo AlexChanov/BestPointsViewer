@@ -9,7 +9,7 @@ import UIKit
 
 final class RequestPointsModuleAssembly {
     func configureRequestPointsModule() -> UIViewController {
-        let networkService = NetworkServiceImpl()
+        let networkService = NetworkServiceImpl(session: URLSession.shared)
         let interactor = RequestPointsInteractor(networkService: networkService)
         let presenter = RequestPointsPresenter(interactor: interactor)
         let view = RequestPointsViewController(presenter: presenter)
