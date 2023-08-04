@@ -42,6 +42,7 @@ extension RequestPointsPresenter: RequestPointsInteractorOutputProtocol {
     func didReceivePoints(_ points: [Point]) {
         DispatchQueue.main.async { [weak self] in
             let sortedPoints = points.sorted { $0.x < $1.x }
+            self?.view?.displaySuccess()
             self?.router?.showPointsScreen(sortedPoints)
         }
     }

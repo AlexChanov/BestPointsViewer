@@ -9,5 +9,6 @@ import Foundation
 
 protocol RequestPointsViewProtocol: AnyObject {
     func displayError(_ error: Error)
+    func displaySuccess()
     func displayIncorrectText(_ text: String)
 }

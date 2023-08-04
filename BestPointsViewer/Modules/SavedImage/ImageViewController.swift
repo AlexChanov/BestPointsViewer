@@ -27,6 +27,7 @@ final class ImageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Saved image"
         view.backgroundColor = .white
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
