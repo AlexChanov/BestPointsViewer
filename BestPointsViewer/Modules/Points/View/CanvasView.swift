@@ -8,13 +8,31 @@
 import UIKit
 
 final class CanvasView: UIView {
+
+    // MARK: - Properties
+
     var points: [Point] = [] {
         didSet {
-            setNeedsDisplay()
+            setNeedsLayout()
         }
     }
 
+    private let shapeLayer = CAShapeLayer()
+
+    // MARK: - UIView lifecycle
+
     override func draw(_ rect: CGRect) {
+        shapeLayer.removeFromSuperlayer()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        animateDrawing()
+    }
+
+    // MARK: - Private functions
+
+    private func animateDrawing() {
         guard !points.isEmpty else { return }
 
         let values = points.map { $0.y }
@@ -24,9 +42,6 @@ final class CanvasView: UIView {
         let heightMultiplier = bounds.height / (maxValue - minValue)
 
         let path = UIBezierPath()
-        path.lineWidth = 2.0
-        UIColor.red.setStroke()
-
         for (i, point) in points.enumerated() {
             let pointX = CGFloat(i) * pointDistance
             let pointY = bounds.height - ((CGFloat(point.y) - minValue) * heightMultiplier)
@@ -39,9 +54,24 @@ final class CanvasView: UIView {
             }
         }
 
-        path.stroke()
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = UIColor.red.cgColor
+        shapeLayer.lineWidth = 2.0
+        shapeLayer.fillColor = UIColor.clear.cgColor
+
+        layer.addSublayer(shapeLayer)
+
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.duration = 2
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+
+        shapeLayer.add(animation, forKey: "line")
     }
 }
+
+// MARK: - File Saving Functions
 
 extension CanvasView {
     func saveToFile(completion: @escaping (URL?, Error?) -> Void) {
@@ -62,7 +92,7 @@ extension CanvasView {
         }
     }
 
-    func getDocumentsDirectory() -> URL {
+    private func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }

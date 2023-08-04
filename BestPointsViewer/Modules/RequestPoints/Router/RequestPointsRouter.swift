@@ -15,7 +15,7 @@ final class RequestPointsRouter: RequestPointsRouterProtocol {
     }
 
     func showPointsScreen(_ points: [Point]) {
-        let pointsViewController = PointsViewController(points: points)
+        let pointsViewController = PointsModuleAssembly().configurePointsModule(points)
         view?.navigationController?.pushViewController(pointsViewController, animated: true)
     }
 }

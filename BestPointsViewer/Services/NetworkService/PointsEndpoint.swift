@@ -7,8 +7,8 @@
 
 import Foundation
 
-// Здесь мы определяем конкретный endpoint для получения точек
 struct PointsEndpoint: Endpoint {
+    
     var baseUrl: String { "https://hr-challenge.interactivestandard.com" }
     var path: String { "/api/test/points" }
     var method: String { "GET" }

@@ -8,7 +8,6 @@
 import Foundation
 
 protocol RequestPointsViewProtocol: AnyObject {
-    func displayPoints(_ points: [Point])
     func displayError(_ error: Error)
     func displayIncorrectText(_ text: String)
 }

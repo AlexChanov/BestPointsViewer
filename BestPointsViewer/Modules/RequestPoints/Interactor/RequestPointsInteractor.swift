@@ -8,12 +8,19 @@
 import Foundation
 
 final class RequestPointsInteractor: RequestPointsInteractorProtocol {
+
+    // MARK: - Properties
+
     weak var output: RequestPointsInteractorOutputProtocol!
     private let networkService: NetworkService
+
+    // MARK: - Initialization
 
     init(networkService: NetworkService) {
         self.networkService = networkService
     }
+
+    // MARK: - RequestPointsInteractorProtocol
 
     func fetchPoints(count: String) {
         let pointsEndpoint = PointsEndpoint(count: count)
