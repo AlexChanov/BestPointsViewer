@@ -7,7 +7,7 @@
 
 import UIKit
 
-ffinal class ChartView: UIScrollView, UIScrollViewDelegate {
+final class ChartView: UIScrollView, UIScrollViewDelegate {
 
     private let canvasView = CanvasView()
 
@@ -60,7 +60,7 @@ private final class CanvasView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
-        guard !points.isEmpty, let context = UIGraphicsGetCurrentContext() else { return }
+        guard !points.isEmpty else { return }
 
         let values = points.map { $0.y }
         let minValue = CGFloat(values.min() ?? 0)
@@ -68,20 +68,22 @@ private final class CanvasView: UIView {
         let pointDistance = bounds.width / CGFloat(points.count - 1)
         let heightMultiplier = bounds.height / (maxValue - minValue)
 
-        context.beginPath()
-        context.setLineWidth(2.0)
-        context.setStrokeColor(UIColor.red.cgColor)
+        let path = UIBezierPath()
+        path.lineWidth = 2.0
+        UIColor.red.setStroke()
 
         for (i, point) in points.enumerated() {
             let pointX = CGFloat(i) * pointDistance
             let pointY = bounds.height - ((CGFloat(point.y) - minValue) * heightMultiplier)
             if i == 0 {
-                context.move(to: CGPoint(x: pointX, y: pointY))
+                path.move(to: CGPoint(x: pointX, y: pointY))
             } else {
-                context.addLine(to: CGPoint(x: pointX, y: pointY))
+                let controlPoint1 = CGPoint(x: (CGFloat(i - 1) * pointDistance + pointX) / 2, y: bounds.height - (CGFloat(points[i - 1].y - minValue) * heightMultiplier))
+                let controlPoint2 = CGPoint(x: (CGFloat(i - 1) * pointDistance + pointX) / 2, y: pointY)
+                path.addCurve(to: CGPoint(x: pointX, y: pointY), controlPoint1: controlPoint1, controlPoint2: controlPoint2)
             }
         }
 
-        context.strokePath()
+        path.stroke()
     }
 }
