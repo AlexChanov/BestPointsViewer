@@ -53,7 +53,7 @@ final class PointsViewController: UIViewController {
             chartView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             chartView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             chartView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            chartView.heightAnchor.constraint(equalToConstant: 200),
+            chartView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5),
 
             tableView.topAnchor.constraint(equalTo: chartView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
